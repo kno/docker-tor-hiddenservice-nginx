@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-LABEL maintainer "opsxcq@strm.sh"
+LABEL maintainer "linsms@gmail.com"
 
 # Base packages
 RUN apt-get update && \
@@ -35,7 +35,7 @@ ADD ./main.sh /main.sh
 # Tor Config
 ADD ./torrc /etc/tor/torrc
 
-# Add nginx default configuration 
+# Add nginx default configuration
 ADD ./nginx.conf /etc/nginx/nginx.conf
 
 # Configuration files and data output folder
@@ -44,4 +44,3 @@ WORKDIR /web
 
 ENTRYPOINT ["/main.sh"]
 CMD ["serve"]
-
